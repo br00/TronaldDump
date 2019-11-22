@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="viewModel"
+                type="com.mimecast.tronalddump.presentation.quote.viewmodel.QuoteViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/backgroundLight"
+        android:layout_margin="@dimen/margin_small">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@android:color/primary_text_light"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/margin_normal"
+            app:mutableText="@{viewModel.getDisplayDescription()}"
+            tools:text="President Obama"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            app:mutableText="@{viewModel.getDisplayDate()}"
+            tools:text="May 12, 2016"/>
+    </LinearLayout>
+</layout>
